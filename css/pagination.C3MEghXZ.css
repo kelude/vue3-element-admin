@@ -1,0 +1,322 @@
+@charset "UTF-8";
+/* Element Chalk Variables */
+/** 全局SCSS变量 */
+:root {
+  --menu-background: #fff;
+  --menu-text: #212121;
+  --menu-active-text: var(
+    --el-menu-active-color
+  );
+  --menu-hover: #e6f4ff;
+  --sidebar-logo-background: #f5f5f5;
+  --sidebar-logo-text-color: #333;
+}
+
+/** 浅色主题-深蓝色侧边栏配色 */
+html.sidebar-color-blue {
+  --menu-background: #304156;
+  --menu-text: #bfcbd9;
+  --menu-active-text: var(--el-menu-active-color);
+  --menu-hover: #263445;
+  --sidebar-logo-background: #2d3748;
+  --sidebar-logo-text-color: #fff;
+}
+
+/** 暗黑主题 */
+html.dark {
+  --menu-background: var(--el-bg-color-overlay);
+  --menu-text: #fff;
+  --menu-active-text: var(--el-menu-active-color);
+  --menu-hover: rgb(0 0 0 / 20%);
+  --sidebar-logo-background: rgb(0 0 0 / 20%);
+  --sidebar-logo-text-color: #fff;
+  /** WangEditor Dark */
+  /* Textarea - css vars */
+  --w-e-textarea-bg-color: var(--el-bg-color); /* 深色背景 */
+  --w-e-textarea-color: var(--el-text-color-primary); /* 浅色文字 */
+  --w-e-textarea-border-color: var(--el-border-color); /* 较深的边框颜色 */
+  --w-e-textarea-slight-border-color: var(--el-border-color-lighter); /* 更淡一些的边框颜色 */
+  --w-e-textarea-slight-color: var(--el-text-color-secondary); /* 浅灰色，用于不那么重要的元素 */
+  --w-e-textarea-slight-bg-color: var(--el-bg-color-overlay); /* 稍微亮一点的背景色 */
+  --w-e-textarea-selected-border-color: var(--el-color-info-light-5); /* 选中元素时的高亮边框 */
+  --w-e-textarea-handler-bg-color: var(--el-color-primary); /* 工具按钮或交互元素的背景色 */
+  /* Toolbar - css vars */
+  --w-e-toolbar-color: var(--el-text-color-regular); /* 工具栏文字颜色 */
+  --w-e-toolbar-bg-color: var(--el-bg-color); /* 工具栏背景颜色 */
+  --w-e-toolbar-active-color: var(--el-text-color-primary); /* 当前激活项的文字颜色 */
+  --w-e-toolbar-active-bg-color: var(--el-fill-color-light); /* 当前激活项的背景颜色 */
+  --w-e-toolbar-disabled-color: var(--el-text-color-secondary); /* 禁用项的颜色 */
+  --w-e-toolbar-border-color: var(--el-border-color-base); /* 工具栏边框颜色 */
+  /*  Modal - css vars */
+  --w-e-modal-button-bg-color: var(--el-bg-color-light-3); /* 弹出框按钮背景色 */
+  --w-e-modal-button-border-color: var(--el-border-color-light); /* 弹出框按钮边框颜色 */
+}
+
+.el-pagination {
+  --el-pagination-font-size: 14px;
+  --el-pagination-bg-color: var(--el-fill-color-blank);
+  --el-pagination-text-color: var(--el-text-color-primary);
+  --el-pagination-border-radius: 2px;
+  --el-pagination-button-color: var(--el-text-color-primary);
+  --el-pagination-button-width: 32px;
+  --el-pagination-button-height: 32px;
+  --el-pagination-button-disabled-color: var(--el-text-color-placeholder);
+  --el-pagination-button-disabled-bg-color: var(--el-fill-color-blank);
+  --el-pagination-button-bg-color: var(--el-fill-color);
+  --el-pagination-hover-color: var(--el-color-primary);
+  --el-pagination-font-size-small: 12px;
+  --el-pagination-button-width-small: 24px;
+  --el-pagination-button-height-small: 24px;
+  --el-pagination-button-width-large: 40px;
+  --el-pagination-button-height-large: 40px;
+  --el-pagination-item-gap: 16px;
+  white-space: nowrap;
+  color: var(--el-pagination-text-color);
+  font-size: var(--el-pagination-font-size);
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+.el-pagination .el-input__inner {
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.el-pagination .el-select {
+  width: 128px;
+}
+.el-pagination .btn-prev,
+.el-pagination .btn-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--el-pagination-font-size);
+  min-width: var(--el-pagination-button-width);
+  height: var(--el-pagination-button-height);
+  line-height: var(--el-pagination-button-height);
+  color: var(--el-pagination-button-color);
+  background: var(--el-pagination-bg-color);
+  padding: 0 4px;
+  border: none;
+  border-radius: var(--el-pagination-border-radius);
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+.el-pagination .btn-prev *,
+.el-pagination .btn-next * {
+  pointer-events: none;
+}
+.el-pagination .btn-prev:focus,
+.el-pagination .btn-next:focus {
+  outline: none;
+}
+.el-pagination .btn-prev:hover,
+.el-pagination .btn-next:hover {
+  color: var(--el-pagination-hover-color);
+}
+.el-pagination .btn-prev.is-active,
+.el-pagination .btn-next.is-active {
+  color: var(--el-pagination-hover-color);
+  cursor: default;
+  font-weight: bold;
+}
+.el-pagination .btn-prev.is-active.is-disabled,
+.el-pagination .btn-next.is-active.is-disabled {
+  font-weight: bold;
+  color: var(--el-text-color-secondary);
+}
+.el-pagination .btn-prev:disabled, .el-pagination .btn-prev.is-disabled,
+.el-pagination .btn-next:disabled,
+.el-pagination .btn-next.is-disabled {
+  color: var(--el-pagination-button-disabled-color);
+  background-color: var(--el-pagination-button-disabled-bg-color);
+  cursor: not-allowed;
+}
+.el-pagination .btn-prev:focus-visible,
+.el-pagination .btn-next:focus-visible {
+  outline: 1px solid var(--el-pagination-hover-color);
+  outline-offset: -1px;
+}
+.el-pagination .btn-prev .el-icon,
+.el-pagination .btn-next .el-icon {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  width: inherit;
+}
+.el-pagination > *.is-first {
+  margin-left: 0 !important;
+}
+
+.el-pagination > *.is-last {
+  margin-right: 0 !important;
+}
+
+.el-pagination .btn-prev {
+  margin-left: var(--el-pagination-item-gap);
+}
+.el-pagination__sizes {
+  margin-left: var(--el-pagination-item-gap);
+  font-weight: normal;
+  color: var(--el-text-color-regular);
+}
+
+.el-pagination__total {
+  margin-left: var(--el-pagination-item-gap);
+  font-weight: normal;
+  color: var(--el-text-color-regular);
+}
+.el-pagination__total[disabled=true] {
+  color: var(--el-text-color-placeholder);
+}
+
+.el-pagination__jump {
+  display: flex;
+  align-items: center;
+  margin-left: var(--el-pagination-item-gap);
+  font-weight: normal;
+  color: var(--el-text-color-regular);
+}
+.el-pagination__jump[disabled=true] {
+  color: var(--el-text-color-placeholder);
+}
+.el-pagination__goto {
+  margin-right: 8px;
+}
+
+.el-pagination__editor {
+  text-align: center;
+  box-sizing: border-box;
+}
+.el-pagination__editor.el-input {
+  width: 56px;
+}
+.el-pagination__editor .el-input__inner::-webkit-inner-spin-button,
+.el-pagination__editor .el-input__inner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.el-pagination__classifier {
+  margin-left: 8px;
+}
+
+.el-pagination__rightwrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .btn-next,
+.el-pagination.is-background .el-pager li {
+  margin: 0 4px;
+  background-color: var(--el-pagination-button-bg-color);
+}
+.el-pagination.is-background .btn-prev.is-active,
+.el-pagination.is-background .btn-next.is-active,
+.el-pagination.is-background .el-pager li.is-active {
+  background-color: var(--el-color-primary);
+  color: var(--el-color-white);
+}
+.el-pagination.is-background .btn-prev:disabled, .el-pagination.is-background .btn-prev.is-disabled,
+.el-pagination.is-background .btn-next:disabled,
+.el-pagination.is-background .btn-next.is-disabled,
+.el-pagination.is-background .el-pager li:disabled,
+.el-pagination.is-background .el-pager li.is-disabled {
+  color: var(--el-text-color-placeholder);
+  background-color: var(--el-disabled-bg-color);
+}
+.el-pagination.is-background .btn-prev:disabled.is-active, .el-pagination.is-background .btn-prev.is-disabled.is-active,
+.el-pagination.is-background .btn-next:disabled.is-active,
+.el-pagination.is-background .btn-next.is-disabled.is-active,
+.el-pagination.is-background .el-pager li:disabled.is-active,
+.el-pagination.is-background .el-pager li.is-disabled.is-active {
+  color: var(--el-text-color-secondary);
+  background-color: var(--el-fill-color-dark);
+}
+.el-pagination.is-background .btn-prev {
+  margin-left: var(--el-pagination-item-gap);
+}
+
+.el-pagination--small .btn-prev,
+.el-pagination--small .btn-next,
+.el-pagination--small .el-pager li {
+  height: var(--el-pagination-button-height-small);
+  line-height: var(--el-pagination-button-height-small);
+  font-size: var(--el-pagination-font-size-small);
+  min-width: var(--el-pagination-button-width-small);
+}
+.el-pagination--small span:not([class*=suffix]),
+.el-pagination--small button {
+  font-size: var(--el-pagination-font-size-small);
+}
+.el-pagination--small .el-select {
+  width: 100px;
+}
+
+.el-pagination--large .btn-prev,
+.el-pagination--large .btn-next,
+.el-pagination--large .el-pager li {
+  height: var(--el-pagination-button-height-large);
+  line-height: var(--el-pagination-button-height-large);
+  min-width: var(--el-pagination-button-width-large);
+}
+.el-pagination--large .el-select .el-input {
+  width: 160px;
+}
+
+.el-pager {
+  user-select: none;
+  list-style: none;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.el-pager li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--el-pagination-font-size);
+  min-width: var(--el-pagination-button-width);
+  height: var(--el-pagination-button-height);
+  line-height: var(--el-pagination-button-height);
+  color: var(--el-pagination-button-color);
+  background: var(--el-pagination-bg-color);
+  padding: 0 4px;
+  border: none;
+  border-radius: var(--el-pagination-border-radius);
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+.el-pager li * {
+  pointer-events: none;
+}
+.el-pager li:focus {
+  outline: none;
+}
+.el-pager li:hover {
+  color: var(--el-pagination-hover-color);
+}
+.el-pager li.is-active {
+  color: var(--el-pagination-hover-color);
+  cursor: default;
+  font-weight: bold;
+}
+.el-pager li.is-active.is-disabled {
+  font-weight: bold;
+  color: var(--el-text-color-secondary);
+}
+.el-pager li:disabled, .el-pager li.is-disabled {
+  color: var(--el-pagination-button-disabled-color);
+  background-color: var(--el-pagination-button-disabled-bg-color);
+  cursor: not-allowed;
+}
+.el-pager li:focus-visible {
+  outline: 1px solid var(--el-pagination-hover-color);
+  outline-offset: -1px;
+}
